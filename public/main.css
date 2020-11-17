@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;1,300;1,400;1,700&display=swap");
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #111;
+}
+
+body * {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1 {
+  font-size: 4vmin;
+}
+
+input[type="url"] {
+  font-size: 3vmin;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: solid 1px #ff006a;
+  -webkit-transition: color 0.25s, border-color 0.25s;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+input[type="url"]:hover, input[type="url"]:active {
+  border-color: white;
+  color: whote;
+}
+
+input[type="submit"] {
+  font-size: 3vmin;
+  background: none;
+  outline: none;
+  border: solid 1px #ff006a;
+  cursor: pointer;
+  padding: 0.75% 1.25%;
+  margin-top: 2.5%;
+  -webkit-transition: color 0.25s, border-color 0.25s;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+input[type="submit"]:hover, input[type="submit"]:active {
+  border-color: white;
+  color: whote;
+}
+
+sub {
+  color: #ff006a;
+  font-size: 2vmin;
+}
+
+sub.error {
+  color: #ff3333;
+}
+/*# sourceMappingURL=main.css.map */

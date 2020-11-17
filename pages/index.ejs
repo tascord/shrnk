@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/p/main.css">
+    <title>Shrnk</title>
+</head>
+<body>
+    
+    <form action="/shorten" method="POST" enctype="application/x-www-form-urlencoded">
+    
+        <h1>Shrnk &mdash; URL Shortner</h1>
+        <sub id="data"></sub><br>
+
+        <input type="url" name="URLInput" id="URLInput" placeholder="URL Here" required autocomplete="off"><br>
+        <input type="submit" value="Shrnk"></input>
+
+    </form>
+
+    <script>
+
+        function get_URI_shard(name) {
+
+        // Thanks past me
+        // again
+
+        let pattern = new RegExp(`(?:(?:&|\\?)${name}=((?:[a-z0-9])+)(?:$|&|))`, 'gi');
+        let code = window.location.search.replace(pattern, '$1');
+        return code == window.location.search ? null : code;
+
+        }
+
+        (() => {
+
+            const elem = document.getElementById("data");
+
+            if(get_URI_shard("error")) {
+                elem.classList.add('error');
+                elem.innerText = get_URI_shard("error");
+            }
+
+            if(get_URI_shard("code")) {
+
+                let url = `${window.location.origin}/go/${get_URI_shard("code")}`;
+                elem.innerHTML = `Your shortened link is <a href="${url}">${url}</a>`;
+                
+            }
+
+        })();
+
+    </script>
+
+</body>
+</html>
