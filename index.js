@@ -103,8 +103,8 @@ app.post('*', (req, res) => {
 
     }
 
-    // No POST paths are supported.
-    res.status(404).end();
+    // 404 
+    else res.status(404).end();
 
 });
 
